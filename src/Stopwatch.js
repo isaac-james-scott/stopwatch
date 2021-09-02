@@ -31,7 +31,7 @@ export default function Stopwatch() {
   };
 
   const handleDelete = (e) => {
-    laps.splice(e.target.getAttribute("data-index"), 1);
+    laps.splice(e.target.getAttribute("indexToDelete"), 1);
   };
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export default function Stopwatch() {
         {laps.map((lap, index) => (
           <LapWrapper>
             <Laps key={lap} index={index + 1} laptime={lap} />
-            <DeleteButton data-index={index} onClick={handleDelete}>
+            <DeleteButton indexToDelete={index} onClick={handleDelete}>
               X
             </DeleteButton>
           </LapWrapper>
